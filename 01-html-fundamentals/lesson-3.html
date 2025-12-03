@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3: Tables & Forms</title>
+</head>
+
+<body>
+
+    <h1>Data & Interaction</h1>
+
+    <!-- PART 1: TABLES (Displaying Data) -->
+    <!-- Structure: table > thead/tbody > tr > th/td -->
+    <h3>Employee List</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Alice</td>
+                <td>Developer</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Bob</td>
+                <td>Designer</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr> <!-- Horizontal Rule (Line) -->
+
+    <!-- PART 2: FORMS (Collecting Data) -->
+    <!-- action="" is where data goes (usually an API in React) -->
+    <h3>Contact Us</h3>
+    <form>
+        <!-- Text Input -->
+        <!-- label 'for' must match input 'id' -->
+        <div>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+        </div>
+
+        <br>
+
+        <!-- Email Input -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="john@example.com" />
+        </div>
+
+        <br>
+
+        <!-- Dropdown (Select) -->
+        <div>
+            <label for="reason">Reason:</label>
+            <select id="reason">
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <br>
+
+        <!-- Checkbox -->
+        <div>
+            <input type="checkbox" id="subscribe" />
+            <label for="subscribe">Subscribe to newsletter</label>
+        </div>
+
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Message</button>
+    </form>
+
+</body>
+
+</html>

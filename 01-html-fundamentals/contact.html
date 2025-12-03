@@ -1,0 +1,54 @@
+<!--Practice Task
+
+Create contact.html.
+Create a form with the heading "Job Application".
+Add inputs for:
+First Name (text)
+Last Name (text)
+Email (email)
+Years of Experience (number)
+Add a dropdown (<select>) for "Position" (Developer, Designer, Manager).
+Add a radio button group for "Willing to relocate?" (Yes/No). Hint: Give them the same name attribute.
+Add a Submit button.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Contact </title>
+</head>
+
+<body>
+    <h3>Job Application </h3>
+    <form>
+        <lable for="firstName">First Name</lable>
+        <input type="text" id="firstName" placeholder="Sean" required /><br>
+
+        <lable for="lastName">Last Name</lable>
+        <input type="text" id="lastName" placeholder="Dsilva" required /><br>
+
+        <lable for="email">Email</lable>
+        <input type="email" id="email" placeholder="seandsilva@gmail.com" required /> <br>
+
+        <lable for="experience">Year of Experience</lable>
+        <input type="number" id="experience" placeholder="5" /><br>
+
+        <lable for="position">Position</lable>
+        <select id="position">
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+        </select><br>
+
+        <lable for="relocate">Willing to relocate</lable>
+        <input type="radio" name="location" value="Yes">
+        <lable for="yes">Yes</lable>
+        <input type="radio" name="location" value="No">
+        <lable for="no">No</lable>
+        <br>
+
+        <button type="Submit">Submit</button><br>
+
+    </form>
+</body>
