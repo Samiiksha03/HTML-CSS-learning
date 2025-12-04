@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Positioning</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            height: 2000px;
+            /* Making page tall so you can scroll */
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* The Parent Container */
+        .parent {
+            position: relative;
+            /* IMPORTANT: This makes it the anchor! */
+            width: 400px;
+            height: 300px;
+            background-color: #dfe6e9;
+            border: 3px solid #2d3436;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 1. Static (Default) */
+        .static-box {
+            background-color: #636e72;
+            margin: 10px;
+        }
+
+        /* 2. Absolute */
+        .absolute-box {
+            background-color: #e74c3c;
+            /* Red */
+            position: absolute;
+            top: -20px;
+            /* 20px above the top edge */
+            right: -20px;
+            /* 20px outside the right edge */
+        }
+
+        /* 3. Fixed */
+        .fixed-box {
+            background-color: #0984e3;
+            /* Blue */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 50px;
+            z-index: 100;
+            /* Make sure it sits on top */
+            cursor: pointer;
+        }
+
+        /* 4. Sticky */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #fdcb6e;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #e17055;
+        }
+
+
+        .notification-badge {
+            background-color: red;
+            color: white;
+            position: absolute;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 50%;
+            top: 1px;
+            right: 1px;
+        }
+
+        .profile-picture {
+            position: relative;
+            /* IMPORTANT: This makes it the anchor! */
+            width: 400px;
+            height: 300px;
+            background-color: #dfe6e9;
+            border: 3px solid #2d3436;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sticky-header">I am Sticky! Scroll down and I will stick to the top.</div>
+
+    <h1>CSS Positioning</h1>
+    <p>Scroll down to see the Fixed element stay in place.</p>
+
+    <h2>Relative & Absolute</h2>
+    <p>The Gray box is the "Parent" (Relative). The Red box is "Absolute" relative to the parent.</p>
+
+    <div class="parent">
+        <div class="box static-box">Static 1</div>
+        <div class="box static-box">Static 2</div>
+
+        <!-- This one floats! -->
+        <div class="box absolute-box">Absolute</div>
+    </div>
+
+    <div class="box fixed-box">Fixed Chat</div>
+
+
+
+    <div class="profile-picture">
+        <img src="" alt="profile-picture">
+        <div class="notification-badge">3</div>
+    </div>
+
+</body>
+
+</html>
