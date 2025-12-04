@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2: Colors & Fonts</title>
+    <style>
+        /* 1. COLORS */
+        /* You can use names (red), Hex (#ff0000), or RGB (rgb(255, 0, 0)) */
+        body {
+            background-color: #f4f4f9;
+            /* Soft gray-blue background */
+            color: #333333;
+            /* Dark gray text (easier on eyes than black) */
+        }
+
+        /* 2. FONTS */
+        /* font-family: The font style */
+        /* font-weight: Thickness (bold, normal, 100-900) */
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+            /* Dark Blue */
+            text-align: center;
+            /* Center the text */
+            text-transform: uppercase;
+            /* Make it ALL CAPS automatically */
+            letter-spacing: 2px;
+            /* Space between letters */
+        }
+
+        /* 3. TEXT STYLING */
+        /* text-decoration: underline, line-through, none */
+        /* font-style: italic */
+        .highlight {
+            color: crimson;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .link-style {
+            text-decoration: none;
+            /* Removes the underline from links */
+            color: blue;
+            border-bottom: 2px solid blue;
+            /* Custom underline style */
+        }
+
+        /* 4. OPACITY (Transparency) */
+        /* 0.0 = Invisible, 1.0 = Solid */
+        .faded {
+            opacity: 0.5;
+            /* 50% see-through */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Typography Magic</h1>
+
+    <p>
+        This is a normal paragraph. The text color is dark gray because we set it on the
+        <code>body</code> tag.
+    </p>
+
+    <p>
+        Sometimes you want to <span class="highlight">emphasize</span> certain words.
+    </p>
+
+    <p class="faded">
+        This text is fading away... (Opacity: 0.5)
+    </p>
+
+    <p>
+        <a href="#" class="link-style">This is a custom link</a> without the default underline.
+    </p>
+
+</body>
+
+</html>
