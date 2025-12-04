@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Floats</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* --- EXAMPLE 1: The Valid Use Case (Newspaper) --- */
+        .article-image {
+            float: left;
+            /* The magic property */
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* --- EXAMPLE 2: The Broken Layout (Collapse) --- */
+        .broken-parent {
+            background-color: #dfe6e9;
+            /* Gray background */
+            border: 5px solid #d63031;
+            /* Red border */
+            padding: 10px;
+            margin-bottom: 50px;
+
+            /* 
+               TASK: Uncomment the line below to fix the collapse! 
+               This is the modern way to contain floats.
+            */
+            display: flow-root;
+        }
+
+        .float-box {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #6c5ce7;
+            color: white;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Helper to show where the next section starts */
+        .next-section {
+            clear: both;
+            /* Ensures this element drops below any floats */
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 2: Floats & Clearfix</h1>
+
+    <!-- 1. The Good Use Case -->
+    <h2>1. Text Wrapping (The Good Part)</h2>
+    <p>
+    <div class="article-image">Image</div>
+    <strong>Resize your browser window!</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Notice how this text wraps around the blue box? That is what floats are for.
+    </p>
+
+    <div class="next-section"></div>
+
+    <!-- 2. The Bug -->
+    <h2>2. The "Collapse" Bug</h2>
+    <p>The box below has a <strong>Gray Background</strong> and a <strong>Red Border</strong>. <br>
+        But wait... where is the gray background? Why is the Red Border a flat line?</p>
+
+    <div class="broken-parent">
+        <div class="float-box">Float 1</div>
+        <div class="float-box">Float 2</div>
+        <div class="float-box">Float 3</div>
+    </div>
+
+    <p><strong>Explanation:</strong> Because the children are floating, the Parent thinks it has no height. It
+        collapsed!</p>
+    <p><strong>Task:</strong> Open the code and uncomment <code>display: flow-root;</code> inside
+        <code>.broken-parent</code> to fix it.
+    </p>
+
+</body>
+
+</html>

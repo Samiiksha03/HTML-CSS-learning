@@ -6,12 +6,17 @@
 -   Understand the difference between "Block" and "Inline" elements.
 -   Learn how to move elements around using `position` (Relative, Absolute, Fixed).
 
-### 2. Relevance to React
-In React, you build components. Some components (like a `<Card />`) stack on top of each other, while others (like a `<Badge />` or `<Icon />`) sit next to text. Understanding **Block vs. Inline** tells you *why* they behave that way.
-**Positioning** is crucial for things like:
--   **Modals/Popups** (Fixed position)
--   **Notification Badges** on icons (Absolute position)
--   **Sticky Headers** (Sticky position)
+### 2. Why it matters for React ⚛️
+**React is strict about HTML validity.**
+If you nest elements incorrectly (putting a Block element inside an Inline element where it doesn't belong), React will scream at you in the browser console.
+
+**React Rule:** `validateDOMNesting(...)` Warning
+**The Error:** `Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.`
+**Why it happens:** A `<p>` tag is for text (inline-like content). A `<div>` is a block. Putting a block inside a paragraph is invalid HTML. React catches this and warns you because it can cause "Hydration Errors" (where the server HTML doesn't match the browser HTML).
+
+**React Pattern:** Component Isolation
+**The Tip:** When building a reusable component (like a `<Card />`), you almost always want to add `position: relative` to the outer-most `div`.
+**Why:** This ensures that if you ever add an `absolute` positioned child (like a "Delete" icon), it stays *inside* that component and doesn't fly off to the top of the page.
 
 ### 3. ELI5 Explanation (Block vs. Inline)
 Imagine your webpage is a piece of notebook paper.
