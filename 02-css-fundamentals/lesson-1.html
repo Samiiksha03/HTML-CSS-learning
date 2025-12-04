@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Module 2: CSS Fundamentals</title>
+
+    <!-- CSS usually goes in a separate file, but for learning we put it here -->
+    <style>
+        /* 1. ELEMENT SELECTOR: Targets all <body> tags */
+        body {
+            font-family: sans-serif;
+            /* Makes text look clean */
+            background-color: #f0f0f0;
+            /* Light gray background */
+        }
+
+        /* 2. CLASS SELECTOR: Targets elements with class="card" */
+        /* THE BOX MODEL: Content + Padding + Border + Margin */
+        .card {
+            background-color: white;
+            width: 300px;
+            /* Content Width */
+
+            /* PADDING: Space INSIDE the box (between content and border) */
+            padding: 20px;
+
+            /* BORDER: The line around the box */
+            border: 5px solid blue;
+
+            /* MARGIN: Space OUTSIDE the box (pushes other things away) */
+            margin: 50px;
+        }
+
+        /* 3. ID SELECTOR: Targets the specific element with id="title" */
+        #title {
+            color: purple;
+            text-align: center;
+        }
+
+        /* 4. DESCENDANT SELECTOR: Targets <p> inside .card */
+        .card p {
+            color: gray;
+            line-height: 1.5;
+            /* Spacing between lines of text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Welcome to CSS!</h1>
+
+    <!-- This div is our "Box" -->
+    <div class="card">
+        <h2>I am a Card</h2>
+        <p>I have padding inside me, a blue border around me, and a margin pushing me away from the edge.</p>
+    </div>
+
+    <div class="card">
+        <h2>I am another Card</h2>
+        <p>Notice how the margin keeps me away from the card above me?</p>
+    </div>
+
+</body>
+
+</html>
