@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Fluid Layouts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+
+        h2 {
+            color: #2d3436;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        /* --- THE BROKEN BOX (Fixed) --- */
+        .fixed-card {
+            background-color: #e17055;
+            /* Red */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+
+            /* 
+               TASK: This is causing a scrollbar on small screens!
+               Change 'width' to 'max-width' and add 'width: 100%'.
+            */
+            max-width: 600px;
+            width: 100%
+        }
+
+        /* --- THE GOOD BOX (Fluid) --- */
+        .fluid-card {
+            background-color: #00b894;
+            /* Green */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+
+            /* This one is already perfect */
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Lesson 1: Fluid vs Fixed</h2>
+    <p><strong>Instructions:</strong> Resize your browser window to make it very narrow (like a mobile phone). Watch
+        what happens to the Red Box.</p>
+
+    <h3>1. The "Fixed" Box (Bad for Mobile)</h3>
+    <div class="fixed-card">
+        I am stuck at 600px wide. If your screen is smaller than 600px, I will create a horizontal scrollbar. That is a
+        bad user experience!
+    </div>
+
+    <h3>2. The "Fluid" Box (Good for Mobile)</h3>
+    <div class="fluid-card">
+        I am fluid! I try to be 600px wide, but if the screen is smaller, I shrink to fit. I am like water. 🌊
+    </div>
+
+</body>
+
+</html>
