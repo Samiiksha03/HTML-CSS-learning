@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Alignment</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #dfe6e9;
+            margin: 0;
+            height: 100vh;
+            /* Full viewport height */
+
+            /* 
+               TASK 1: Center the Login Card!
+               Currently, the body is a block, so the card sits at the top-left.
+               Hint: Use Flexbox on the body.
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            /* Text alignment inside the card */
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2d3436;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            /* Ensures padding doesn't add width */
+        }
+
+        .login-btn {
+            background-color: #0984e3;
+            color: white;
+            border: none;
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+
+            /* 
+               TASK 2: Center the text inside the button!
+               Sometimes text gets stuck at the top if we set a fixed height.
+               Use Flexbox here too!
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-btn:hover {
+            background-color: #74b9ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+
+        <div class="login-btn">Sign In</div>
+    </div>
+
+</body>
+
+</html>
