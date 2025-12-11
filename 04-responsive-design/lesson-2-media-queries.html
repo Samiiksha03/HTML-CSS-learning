@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Media Queries</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+
+        /* --- DESKTOP MENU (Blue) --- */
+        .desktop-menu {
+            background-color: #0984e3;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 8px;
+        }
+
+        /* --- MOBILE MENU (Orange) --- */
+        .mobile-menu {
+            background-color: #e17055;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+
+            /* 
+               TASK 1: Hide this by default! 
+               We only want to see it on small screens.
+            */
+            /* display: none; */
+        }
+
+        /* --- THE MAGIC SWITCH --- */
+        @media (max-width: 600px) {
+
+            /* 
+               TASK 2: Inside this block, write CSS to:
+               1. Hide .desktop-menu (display: none)
+               2. Show .mobile-menu (display: block)
+            */
+            .desktop-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Resize your browser to see the magic!</h2>
+    <p>Current Status: Both menus are visible. That is confusing.</p>
+
+    <!-- This should only show on Big Screens -->
+    <div class="desktop-menu">
+        <span>Logo</span>
+        <span>Home | About | Contact</span>
+    </div>
+
+    <!-- This should only show on Small Screens -->
+    <div class="mobile-menu">
+        ☰ Menu (I am for Mobile)
+    </div>
+
+</body>
+
+</html>
