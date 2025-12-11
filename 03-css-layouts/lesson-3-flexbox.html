@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Flexbox Playground</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* --- THE FLEX CONTAINER (Parent) --- */
+        .flex-container {
+            display: flex;
+            /* THE MAGIC SPELL */
+
+            /* Default values */
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            width: 100%;
+            height: 400px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            border: 5px solid #34495e;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* --- THE FLEX ITEMS (Children) --- */
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: #e74c3c;
+            border: 4px solid #c0392b;
+            border-radius: 8px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            /* Just a little space so they don't touch */
+        }
+
+        /* --- CONTROLS (Just for the playground) --- */
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .control-group {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flexbox Playground</h1>
+    <p>Click the buttons to change the CSS of the white box below!</p>
+
+    <div class="controls">
+        <div class="control-group">
+            <h3>1. Justify Content (Main Axis - X)</h3>
+            <button onclick="setJustify('flex-start')">flex-start</button>
+            <button onclick="setJustify('center')">center</button>
+            <button onclick="setJustify('flex-end')">flex-end</button>
+            <button onclick="setJustify('space-between')">space-between</button>
+            <button onclick="setJustify('space-around')">space-around</button>
+        </div>
+
+        <div class="control-group">
+            <h3>2. Align Items (Cross Axis - Y)</h3>
+            <button onclick="setAlign('flex-start')">flex-start</button>
+            <button onclick="setAlign('center')">center</button>
+            <button onclick="setAlign('flex-end')">flex-end</button>
+        </div>
+    </div>
+
+    <!-- THE PARENT -->
+    <div class="flex-container" id="container">
+        <!-- THE CHILDREN -->
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <script>
+        // Simple JavaScript to change the CSS styles
+        // Don't worry about understanding this part yet!
+        const container = document.getElementById('container');
+
+        function setJustify(value) {
+            container.style.justifyContent = value;
+        }
+
+        function setAlign(value) {
+            container.style.alignItems = value;
+        }
+    </script>
+
+</body>
+
+</html>
