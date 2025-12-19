@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Mobile First</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #dfe6e9;
+        }
+
+        /* --- 1. BASE STYLES (Mobile Default) --- */
+        /* We write styles for the smallest screen FIRST */
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+
+            /* Currently: Block layout (Stacked) */
+            display: block;
+        }
+
+        .product-image {
+            width: 100%;
+            /* Full width on mobile */
+            height: 200px;
+            background-color: #0984e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        /* --- 2. DESKTOP UPGRADE (The Task) --- */
+        /* 
+           TASK: Add a media query here!
+           When the screen is bigger than 700px (min-width: 700px):
+           1. Make .product-card a Flex container (display: flex).
+           2. Make .product-image width 300px (fixed width).
+           3. Make .product-image height auto (so it stretches).
+        */
+
+        @media (min-width: 700px) {
+            .product-card {
+                display: flex;
+            }
+
+            .product-image {
+                width: 300px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">Resize window > 700px to see the change!</h2>
+
+    <div class="product-card">
+        <div class="product-image">
+            Product Image
+        </div>
+        <div class="product-info">
+            <h3>Super Cool Headphones</h3>
+            <p>These headphones are amazing. They have noise cancellation, 20-hour battery life, and they look great on
+                mobile AND desktop.</p>
+            <button
+                style="background: #0984e3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Buy
+                Now</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
