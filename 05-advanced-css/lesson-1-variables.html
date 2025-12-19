@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: CSS Variables</title>
+    <style>
+        /* --- 1. DEFINE VARIABLES --- */
+        :root {
+
+            --bg-color: #f5f6fa;
+            --text-color: #2d3436;
+            --accent-color: #0984e3;
+
+        }
+
+        /* --- 2. DARK MODE OVERRIDES --- */
+        /* When the body has the class "dark-mode", we change the values */
+        body.dark-mode {
+
+            --bg-color: #2d3436;
+            --text-color: #f5f6fa;
+
+        }
+
+        /* --- 3. USE VARIABLES --- */
+        body {
+            font-family: sans-serif;
+            padding: 50px;
+            transition: background-color 0.3s, color 0.3s;
+
+
+            background-color: var(--bg-color);
+            color: var(--text-color);
+
+
+        }
+
+        h1 {
+            /* Use the accent color */
+            color: var(--accent-color);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Theme Switcher</h1>
+    <p>
+        CSS Variables make "Dark Mode" super easy.
+        Instead of writing new CSS for every element, we just swap the variable values!
+    </p>
+
+    <button onclick="toggleTheme()">Toggle Dark Mode 🌙</button>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+
+</html>
