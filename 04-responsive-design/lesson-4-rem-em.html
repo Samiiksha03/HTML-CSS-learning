@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Rem vs Px</title>
+    <style>
+        /* Default Root Size */
+        html {
+            font-size: 16px;
+            transition: font-size 0.3s ease;
+            /* Smooth transition for demo */
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* --- 1. THE BAD CARD (Pixels) --- */
+        .px-card {
+            background-color: #ff7675;
+            color: white;
+            border-radius: 8px;
+
+            /* 
+               TASK: Convert these PX values to REM!
+               Formula: px / 16 = rem
+               
+               300px -> ???
+               20px  -> ???
+               24px  -> ???
+               16px  -> ???
+            */
+            width: 18.75rem;
+            padding: 1.25rem;
+        }
+
+        .px-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .px-text {
+            font-size: 1rem;
+        }
+
+        /* --- 2. THE GOOD CARD (Rem) --- */
+        .rem-card {
+            background-color: #00b894;
+            color: white;
+            border-radius: 0.5rem;
+            /* 8px */
+
+            /* Scalable Width! */
+            width: 18.75rem;
+            /* 300px / 16 = 18.75rem */
+            padding: 1.25rem;
+            /* 20px / 16 = 1.25rem */
+        }
+
+        .rem-title {
+            font-size: 1.5rem;
+            /* 24px */
+            margin-bottom: 0.625rem;
+            /* 10px */
+            font-weight: bold;
+        }
+
+        .rem-text {
+            font-size: 1rem;
+            /* 16px */
+        }
+
+        /* --- CONTROLS --- */
+        .controls {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="controls">
+        <h3>Simulate User Settings (Root Font Size)</h3>
+        <p>Click these to pretend you are a user with visual impairment.</p>
+        <button onclick="setSize('16px')">Normal (16px)</button>
+        <button onclick="setSize('24px')">Large (24px)</button>
+        <button onclick="setSize('32px')">Extra Large (32px)</button>
+    </div>
+
+    <div class="container">
+        <!-- THE BAD CARD -->
+        <div class="px-card">
+            <div class="px-title">I am Pixels (Bad)</div>
+            <div class="px-text">
+                I stay small even if you click "Extra Large". This is hard for some people to read!
+            </div>
+        </div>
+
+        <!-- THE GOOD CARD -->
+        <div class="rem-card">
+            <div class="rem-title">I am Rem (Good)</div>
+            <div class="rem-text">
+                I grow when the root settings change! I am accessible.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setSize(size) {
+            document.documentElement.style.fontSize = size;
+        }
+    </script>
+
+</body>
+
+</html>
